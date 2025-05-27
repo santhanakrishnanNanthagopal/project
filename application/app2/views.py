@@ -6,7 +6,7 @@ from .serializers import UserSerializer
 
 # CREATE
 @api_view(['POST'])
-def create(request):
+#def create(request):
     serializer = UserSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
