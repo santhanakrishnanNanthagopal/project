@@ -16,9 +16,4 @@ def create(request):
 def get_all_details(request):
     data=Student.objects().all()
     serializer=StudentSerializer(data,many=True)
-    return Response(serializer.data,status=200)
-@api_view(['GET'])
-def get_particular_data(requset,pk):
-    data=Student.objects.get(pk=pk)
-    except Student.DoesNotExist():
-    
+    return Response(serializer.data,status=200)    
