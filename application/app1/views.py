@@ -14,7 +14,7 @@ def create(request):
 
 @api_view(['GET'])
 def get_all_details(request):
-    data=Student.objects().all()
+    data=Student.objects().all(order_by='name')
     serializer=StudentSerializer(data,many=True)
     return Response(serializer.data,status=200)
 @api_view(['GET'])
